@@ -25,9 +25,12 @@ CREATE TABLE songs
   title TEXT NOT NULL,
   duration_in_seconds INTEGER NOT NULL,
   release_date DATE NOT NULL,
-  artists TEXT[] NOT NULL,
+  artist_1 INTEGER NOT NULL,
+  artist_2 INTEGER,
+  artist_3 INTEGER,
   album TEXT NOT NULL,
-  producers TEXT[] NOT NULL
+  producer_1 INTEGER NOT NULL,
+  producer_2 INTEGER
 );
 
 INSERT INTO artists
@@ -40,7 +43,7 @@ VALUES
   ('Lady Gaga'),
   ('Bradley Cooper'),
   ('Nickelback'),
-  ('Jay Z')
+  ('Jay Z'),
   ('Alicia Keys'),
   ('Katy Perry'),
   ('Juicy J'),
@@ -52,7 +55,8 @@ VALUES
 INSERT INTO producers
   (producer_name)
 VALUES
-  ('Dust Brothers","Stephen Lironi'),
+  ('Dust Brothers'),
+  ('Stephen Lironi'),
   ('Roy Thomas Baker'),
   ('Walter Afanasieff'),
   ('Benjamin Rice'),
@@ -66,15 +70,6 @@ VALUES
   ('Darkchild');
 
 INSERT INTO songs
-  (title, duration_in_seconds, release_date, artists, album, producers)
+  (title, duration_in_seconds, release_date, artist_1, album, producer_1)
 VALUES
-  ('MMMBop', 238, '04-15-1997', [1], [1, 2]),
-  ('Bohemian Rhapsody', 355, '10-31-1975', {2}, {2}),
-  ('One Sweet Day', 282, '11-14-1995', {3, 4}, {3}),
-  ('Shallow', 216, '09-27-2018', {5, 6}, {4}),
-  ('How You Remind Me', 223, '08-21-2001', {7}, {5}),
-  ('New York State of Mind', 276, '10-20-2009', {8, 9}, {6}),
-  ('Dark Horse', 215, '12-17-2013'),
-  ('Moves Like Jagger', 201, '06-21-2011'),
-  ('Complicated', 244, '05-14-2002'),
-  ('Say My Name', 240, '11-07-1999');
+  ('Bohemian Rhapsody', 355, '10-31-1975', 2, 'A Night At The Opera', 3)
